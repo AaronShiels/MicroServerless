@@ -7,9 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{53AEAAA5-B80
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Abstractions", "src\Microservices.Abstractions\Microservices.Abstractions.csproj", "{C9426347-9204-4FA0-8AEF-58BA33ED4183}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{3FAF0F66-4296-4A02-9812-5537B9EE53D0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{3FAF0F66-4296-4A02-9812-5537B9EE53D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.HostedService.Sample", "sample\Microservices.HostedService.Sample\Microservices.HostedService.Sample.csproj", "{64984FE5-AE6F-4224-935A-16B526ADE84B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.HostedService.Sample", "samples\Microservices.HostedService.Sample\Microservices.HostedService.Sample.csproj", "{64984FE5-AE6F-4224-935A-16B526ADE84B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{D99E6157-4875-4729-A196-D81AE4EC2EBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.HostedService.Template", "templates\Microservices.HostedService.Template\Microservices.HostedService.Template.csproj", "{E002014A-15EE-41C3-8401-A81A307FBC5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,9 +52,22 @@ Global
 		{64984FE5-AE6F-4224-935A-16B526ADE84B}.Release|x64.Build.0 = Release|Any CPU
 		{64984FE5-AE6F-4224-935A-16B526ADE84B}.Release|x86.ActiveCfg = Release|Any CPU
 		{64984FE5-AE6F-4224-935A-16B526ADE84B}.Release|x86.Build.0 = Release|Any CPU
+		{E002014A-15EE-41C3-8401-A81A307FBC5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E002014A-15EE-41C3-8401-A81A307FBC5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E002014A-15EE-41C3-8401-A81A307FBC5D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E002014A-15EE-41C3-8401-A81A307FBC5D}.Debug|x64.Build.0 = Debug|Any CPU
+		{E002014A-15EE-41C3-8401-A81A307FBC5D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E002014A-15EE-41C3-8401-A81A307FBC5D}.Debug|x86.Build.0 = Debug|Any CPU
+		{E002014A-15EE-41C3-8401-A81A307FBC5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E002014A-15EE-41C3-8401-A81A307FBC5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E002014A-15EE-41C3-8401-A81A307FBC5D}.Release|x64.ActiveCfg = Release|Any CPU
+		{E002014A-15EE-41C3-8401-A81A307FBC5D}.Release|x64.Build.0 = Release|Any CPU
+		{E002014A-15EE-41C3-8401-A81A307FBC5D}.Release|x86.ActiveCfg = Release|Any CPU
+		{E002014A-15EE-41C3-8401-A81A307FBC5D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C9426347-9204-4FA0-8AEF-58BA33ED4183} = {53AEAAA5-B80B-41F8-A92F-4BBD55CEC2EC}
 		{64984FE5-AE6F-4224-935A-16B526ADE84B} = {3FAF0F66-4296-4A02-9812-5537B9EE53D0}
+		{E002014A-15EE-41C3-8401-A81A307FBC5D} = {D99E6157-4875-4729-A196-D81AE4EC2EBB}
 	EndGlobalSection
 EndGlobal

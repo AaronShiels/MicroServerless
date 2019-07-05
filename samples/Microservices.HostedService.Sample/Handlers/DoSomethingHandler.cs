@@ -7,19 +7,15 @@ namespace Microservices.Sample.Handlers
 {
     public class DoSomethingHandler : ICommandHandler<DoSomething>
     {
-        private readonly IDomainEventPublisher _eventPublisher;
-        private readonly IAnalyticEventPublisher _analyticsPublisher;
+        private readonly IEventPublisher _eventPublisher;
 
-        public DoSomethingHandler(IDomainEventPublisher eventPublisher, IAnalyticEventPublisher analyticsPublisher)
+        public DoSomethingHandler(IEventPublisher eventPublisher)
         {
             _eventPublisher = eventPublisher;
-            _analyticsPublisher = analyticsPublisher;
         }
 
         public async Task<(bool Success, string Details)> Handle(DoSomething command)
         {
-            await _analyticsPublisher.Publish(new SomethingAttempted());
-
             var valid = Validate(command);
             if (!valid)
                 return (false, "Shit's broke");
