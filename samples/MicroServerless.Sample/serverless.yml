@@ -1,0 +1,40 @@
+service: microserverless.sample
+
+provider:
+  name: aws
+  runtime: dotnetcore2.1
+
+# you can overwrite defaults here
+#  stage: dev
+#  region: us-east-1
+
+# you can add statements to the Lambda function's IAM Role here
+#  iamRoleStatements:
+#    - Effect: "Allow"
+#      Action:
+#        - "s3:ListBucket"
+#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
+#    - Effect: "Allow"
+#      Action:
+#        - "s3:PutObject"
+#      Resource:
+#        Fn::Join:
+#          - ""
+#          - - "arn:aws:s3:::"
+#            - "Ref" : "ServerlessDeploymentBucket"
+#            - "/*"
+
+# you can define service wide environment variables here
+#  environment:
+#    variable1: value1
+
+package:
+  individually: true
+
+functions:
+  addvalue:
+    handler: MicroServerless::MicroServerless.Sample.Handlers.Commands.AddValueHandler
+
+    # you can add packaging information here
+    package:
+      artifact: bin/release/netcoreapp3.1/hello.zip
