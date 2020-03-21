@@ -3,27 +3,47 @@
     "tasks": [
         {
             "label": "build",
-            "command": "dotnet",
             "type": "process",
+            "command": "dotnet",
             "args": [
                 "build"
             ],
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "publish",
-            "command": "dotnet",
+            "label": "package",
             "type": "process",
+            "command": "dotnet",
             "args": [
-                "dotnet",
                 "lambda",
                 "package",
                 "-c",
-                "release"
+                "Release",
+                "--msbuild-parameters",
+                "--self-contained true"
             ],
+            "options": {
+                "cwd": "${workspaceFolder}/samples/MicroServerless.Sample"
+            },
             "problemMatcher": [
                 "$msCompile"
             ]
+        },
+        {
+            "label": "deploy",
+            "type": "shell",
+            "command": "serverless",
+            "args": [
+                "deploy",
+                "--verbose"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/samples/MicroServerless.Sample"
+            },
+            "dependsOn": [
+                "package"
+            ],
+            "problemMatcher": []
         }
     ]
 }
