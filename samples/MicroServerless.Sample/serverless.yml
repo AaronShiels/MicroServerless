@@ -14,5 +14,5 @@ functions:
     handler: MicroServerless::MicroServerless.Sample.Progam::Main
     events:
       - http:
-          path: sample
-          method: get
+          path: /
+          method: ANY

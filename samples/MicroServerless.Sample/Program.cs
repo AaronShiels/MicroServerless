@@ -1,21 +1,19 @@
-using Amazon.Lambda.Core;
-using Amazon.Lambda.APIGatewayEvents;
-using Amazon.Lambda.RuntimeSupport;
-using LambdaJsonSerializer = Amazon.Lambda.Serialization.Json.JsonSerializer;
-using System;
 using System.Threading.Tasks;
+using MicroServerless.Amazon.Lambda;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace MicroServerless.Sample
 {
     public class Program
     {
-        public static void Main(string[] args)
-        {
-            var entryPoint = new LambdaEntryPoint();
-            var functionHandler = (Func<APIGatewayProxyRequest, ILambdaContext, Task<APIGatewayProxyResponse>>)entryPoint.HandleAsync;
-            using var handlerWrapper = HandlerWrapper.GetHandlerWrapper(functionHandler, new LambdaJsonSerializer());
-            using var bootstrap = new LambdaBootstrap(handlerWrapper);
-            bootstrap.RunAsync().Wait();
-        }
+        public static Task Main(string[] args) => CreateHostBuilder(args).Build().StartAsync();
+
+        public static IHostBuilder CreateHostBuilder(string[] args) => LambdaHost
+            .CreateDefaultBuilder()
+            .ConfigureServices(services =>
+            {
+                services.AddSingleton<ILambdaHandler, ApiGatewayHandler>();
+            });
     }
 }
